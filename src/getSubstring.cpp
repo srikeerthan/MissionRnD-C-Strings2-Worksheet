@@ -18,6 +18,17 @@ original String
 #include <stdlib.h>
 
 char * get_sub_string(char *str, int i, int j){
-
-    return NULL;
+	if (str == NULL)
+		return NULL;
+	else if (i > j)
+		return NULL;
+	else
+	{
+		char  *substr = (char *)malloc(j - i + 2);
+		int index;
+		for (index=0,i; str[i] && i <= j; i++,index++)
+			substr[index] = str[i];
+		substr[index] = '\0';
+		return substr;
+	}
 }
